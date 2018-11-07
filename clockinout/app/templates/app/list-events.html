@@ -1,0 +1,14 @@
+{% if user.is_authenticated %}
+{% if event_list %}
+	<h3> Here is a list of all clock events </h3>
+	<ul>
+	{% for event in event_list %}
+		<li> {{ event }} </li>
+	{% endfor %}
+	</ul>
+{% else %}
+	<p> No one has clocked in or out yet :(. </p>
+{% endif %}
+{% else %}
+	<h3> Only administrators can view clock events </h3>
+{% endif %}

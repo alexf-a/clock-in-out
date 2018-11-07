@@ -1,0 +1,11 @@
+<h2> Hi! <h2/>
+<h3> Please clock-in or clock-out below. </h3>
+
+<form action="{% url 'app:process_clock_event' %}" method="post">
+{% csrf_token %}
+{{ clock_form.as_p }}
+<input type="submit" value="Submit!" name="clock">
+</form>
+
+<h3> Want to see all clock events? </h3>
+<a href="{% url 'login' %}"> Click here. </a>
